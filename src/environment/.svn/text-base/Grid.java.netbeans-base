@@ -5,7 +5,6 @@
 package environment;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Point;
 
@@ -35,21 +34,8 @@ public class Grid implements Paintable {
     public Grid(int columns, int rows, int cellWidth, int cellHeight, Point position, Color color) {
         this.columns = columns;
         this.rows = rows;
-        
         this.cellWidth = cellWidth;
         this.cellHeight = cellHeight;
-        
-        this.position = position;
-        this.color = color;
-    }
-
-    public Grid(Dimension gridSize, Dimension cellSize, Point position, Color color) {
-        this.columns = gridSize.height;
-        this.rows = gridSize.width;
-        
-        this.cellWidth = cellSize.width;
-        this.cellHeight = cellSize.height;
-        
         this.position = position;
         this.color = color;
     }
