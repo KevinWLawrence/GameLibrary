@@ -1,0 +1,43 @@
+10
+
+dir
+121
+https://brentwoodcollege.svn.cvsdude.com/GameLibrary/GameLibrary/src
+https://brentwoodcollege.svn.cvsdude.com/GameLibrary
+
+
+
+2012-06-09T20:17:43.673148Z
+121
+kevinwlawrence
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+04a02992-b6c1-46ca-a606-13b13dee948f
+
+audio
+dir
+
+boundary
+dir
+
+environment
+dir
+
+image
+dir
+
+path
+dir
+

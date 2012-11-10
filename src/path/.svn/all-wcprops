@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/GameLibrary/!svn/ver/14/GameLibrary/src/path
+END
+PathSegment.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/GameLibrary/!svn/ver/3/GameLibrary/src/path/PathSegment.java
+END
+PathMoveManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/GameLibrary/!svn/ver/13/GameLibrary/src/path/PathMoveManager.java
+END
+Path.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/GameLibrary/!svn/ver/12/GameLibrary/src/path/Path.java
+END
+PathEventHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/GameLibrary/!svn/ver/3/GameLibrary/src/path/PathEventHandler.java
+END
+MovementGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/GameLibrary/!svn/ver/3/GameLibrary/src/path/MovementGenerator.java
+END
+Segment.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/GameLibrary/!svn/ver/3/GameLibrary/src/path/Segment.java
+END
+SimpleSegment.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/GameLibrary/!svn/ver/14/GameLibrary/src/path/SimpleSegment.java
+END
+TrigonometryCalculator.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/GameLibrary/!svn/ver/3/GameLibrary/src/path/TrigonometryCalculator.java
+END
