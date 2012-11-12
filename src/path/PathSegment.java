@@ -15,13 +15,16 @@ public class PathSegment {
     private Point start, end;
     private BasisVector basis;
 
+//   <editor-fold defaultstate="collapsed" desc="Constructors">  
     public PathSegment(Point start, Point end) {
         this.start = start;
         this.end = end;
 
         this.basis = new BasisVector(start, end, true);
     }
+//   </editor-fold>  
 
+//   <editor-fold defaultstate="collapsed" desc="Getters and Setters">  
     public BasisVector getBasis() {
         return this.basis;
     }
@@ -53,102 +56,42 @@ public class PathSegment {
     public void setEnd(Point end) {
         this.end = end;
     }
+//   </editor-fold>  
 
     /**
-     * Compute if the Point provided is "beyond" the endpoint of the segment.
-     *   - For x (horizontal) dimension, if segment bears:
-     *       - WEST: any point to the WEST is beyond, i.e. Point.x < end.x
-     *       - EAST: any point to the EAST is beyond; i.e. Point.x > end.x
-     *       - NONE: (vertical line) ignore and rely on y check;
+     * Compute if the Point provided is "beyond" the endpoint of the segment. -
+     * For x (horizontal) dimension, if segment bears: - WEST: any point to the
+     * WEST is beyond, i.e. Point.x < end.x - EAST: any point to the EAST is
+     * beyond; i.e. Point.x > end.x - NONE: (vertical line) ignore and rely on y
+     * check;
      *
-     *   - For y (vertical) dimension, if segment bears:
-     *       - NORTH: any point to the NORTH is beyond, i.e. Point.y < end.y
-     *       - SOUTH: any point to the SOUTH is beyond; i.e. Point.y > end.y
-     *       - NONE: (horizontal line) ignore...
+     * - For y (vertical) dimension, if segment bears: - NORTH: any point to the
+     * NORTH is beyond, i.e. Point.y < end.y - SOUTH: any point to the SOUTH is
+     * beyond; i.e. Point.y > end.y - NONE: (horizontal line) ignore...
      *
      * @return boolean: true if point is beyond endpoint, false otherwise
      */
     public boolean isPointPastEnd(Point point) {
-
         // Check x dimension (WEST <------> EAST)
-        if ((end.x - start.x) > 0)  //EAST
+        if ((end.x - start.x) > 0) {   // EAST
             return (point.x > end.x);
-            
-         else { // WEST
+        } else {                       // WEST
             if (point.x < end.x) {
                 return true;
             }
         }
 
         // Check y dimension (NORTH <------> SOUTH)
-        if ((end.y - start.y) > 0) { //SOUTH
+        if ((end.y - start.y) > 0) {   //SOUTH
             if (point.y > end.y) {
                 return true;
             }
-        } else { // NORTH
+        } else {                       // NORTH
             if (point.y < end.y) {
                 return true;
             }
         }
 
         return false;
-    }
-
-    public class BasisVector {
-
-        private double x, y;
-        boolean isNormalized = false;
-
-        public BasisVector(double x, double y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        public BasisVector(double x, double y, boolean isNormalized) {
-            this.x = x;
-            this.y = y;
-
-            this.isNormalized = isNormalized;
-            if (isNormalized) {
-                normalize();
-            }
-        }
-
-        public BasisVector(Point start, Point end, boolean isNormalized) {
-            x = end.x - start.x;
-            y = end.y - start.y;
-
-            this.isNormalized = isNormalized;
-            if (isNormalized) {
-                normalize();
-            }
-        }
-
-        private void normalize() {
-            //compute normalized basis vector
-            if ((x != 0.0) && (y != 0.0)) {
-                // can't normalize (0, 0) basis, will get div by zero error
-                double xBasisAbs = Math.abs(x);
-                double yBasisAbs = Math.abs(y);
-
-                x /= Math.max(xBasisAbs, yBasisAbs);
-                y /= Math.max(xBasisAbs, yBasisAbs);
-            }
-
-        }
-
-        /**
-         * @return the x
-         */
-        public double getX() {
-            return this.x;
-        }
-
-        /**
-         * @return the y
-         */
-        public double getY() {
-            return y;
-        }
     }
 }
