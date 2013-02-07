@@ -10,8 +10,6 @@ package message;
  */
 public class MessageXMLConvertor {
     
-    public static void convertXMLToMessage(String XML){
-        
-    }
+    public static void convertXMLToMessage(String XML){}
     
 }

@@ -4,8 +4,6 @@
  */
 package network;
 
-import environment.ApplicationStarter;
-import java.awt.Dimension;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.logging.Level;
