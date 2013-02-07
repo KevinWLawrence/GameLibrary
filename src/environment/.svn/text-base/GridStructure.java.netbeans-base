@@ -20,14 +20,11 @@ public class GridStructure {
     private int extendLength = 0;
     private LocationValidator locationValidator;
 
-//   <editor-fold defaultstate="collapsed" desc="Constructors">
     public GridStructure(ArrayList<Point> structure, Direction direction) {
         this.structure = structure;
         this.direction = direction;
     }
-//   </editor-fold>
 
-//   <editor-fold defaultstate="collapsed" desc="Methods">
     /*
      * Move the structure one position in the correct direction To move the
      * GridStructure, remove the tail (last element of the structure list) and
@@ -167,9 +164,7 @@ public class GridStructure {
     public boolean selfHitTest() {
         return selfHitTest(this);
     }
-//   </editor-fold>
 
-//   <editor-fold defaultstate="collapsed" desc="Properties">
     /**
      * @return the structure
      */
@@ -262,6 +257,4 @@ public class GridStructure {
     public void setLocationValidator(LocationValidator locationValidator) {
         this.locationValidator = locationValidator;
     }
-//   </editor-fold>
-
 }

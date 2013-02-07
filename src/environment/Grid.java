@@ -5,7 +5,6 @@
 package environment;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Point;
 
@@ -35,21 +34,8 @@ public class Grid implements Paintable {
     public Grid(int columns, int rows, int cellWidth, int cellHeight, Point position, Color color) {
         this.columns = columns;
         this.rows = rows;
-        
         this.cellWidth = cellWidth;
         this.cellHeight = cellHeight;
-        
-        this.position = position;
-        this.color = color;
-    }
-
-    public Grid(Dimension gridSize, Dimension cellSize, Point position, Color color) {
-        this.columns = gridSize.height;
-        this.rows = gridSize.width;
-        
-        this.cellWidth = cellSize.width;
-        this.cellHeight = cellSize.height;
-        
         this.position = position;
         this.color = color;
     }
@@ -70,7 +56,7 @@ public class Grid implements Paintable {
     }
 //  </editor-fold>
  
-
+    //   <editor-fold defaultstate="collapsed" desc="Methods">
     /**
      * @return a Point(x, y) coordinate of the top left position of the cell
      * Note that this does not validate if the row and column input parameters
@@ -92,7 +78,7 @@ public class Grid implements Paintable {
         return getCellPosition(point.x, point.y);
     }
 
-    /**  By Joel Barrette
+    /**  By Kevin Lawrence
      * @param systemCoordinateX the x coordinate, based on the graphics system
      * @param systemCoordinateY the y coordinate, based on the graphics system
      * 
@@ -101,13 +87,26 @@ public class Grid implements Paintable {
      * Note that this does not validate if the row and column input parameters
      * are valid (i.e. contained within the limits of the size of the grid).
      */
-    public Point cellPointCalculator(int systemCoordinateX, int systemCoordinateY) {
+    public Point getCellLocationFromSystemCoordinate(int systemCoordinateX, int systemCoordinateY) {
         int cellCoordinateX = (systemCoordinateX - getPosition().x) / getCellWidth();
         int cellCoordinateY = (systemCoordinateY - getPosition().y) / getCellHeight();
 
         return new Point(cellCoordinateX, cellCoordinateY);
-    } 
+    }
     
+    /**  By Kevin Lawrence
+     * @param systemCoordinate the point to be assess, based on the graphics system
+     * 
+     * @return a Point(x, y) which is the decoded [x, y] coordinate of the top 
+     * left position of the cell that contains the input system coordinates
+     * Note that this does not validate if the row and column input parameters
+     * are valid (i.e. contained within the limits of the size of the grid).
+     */
+    public Point getCellLocationFromSystemCoordinate(Point systemCoordinate) {
+        return getCellLocationFromSystemCoordinate(systemCoordinate.x, systemCoordinate.y);
+    } 
+//   </editor-fold>
+
     //   <editor-fold defaultstate="collapsed" desc="Properties">
     /**
      * @return Point having x = cell width and y = cell height

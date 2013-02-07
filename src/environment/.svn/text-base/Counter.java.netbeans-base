@@ -16,7 +16,6 @@ public class Counter {
     private int value;
     private Range[] ranges;
 
-//  <editor-fold defaultstate="Collapsed" desc="Constructors">
     public Counter(String name, int minimum, int maximum, int value, Range[] ranges){
         this.name = name;
         setMinimum(minimum);
@@ -24,9 +23,7 @@ public class Counter {
         setValue(value);
         this.ranges = ranges;
     }
-//  </editor-fold>
 
-//  <editor-fold defaultstate="Collapsed" desc="Properties">
     /**
      * @return the name
      */
@@ -108,6 +105,7 @@ public class Counter {
             this.value = value;
     }
 
+
     /**
      * @param increment the value to add to Value
      */
@@ -155,6 +153,5 @@ public class Counter {
     public void setRanges(Range[] ranges) {
         this.ranges = ranges;
     }
-//  </editor-fold>
 
 }
