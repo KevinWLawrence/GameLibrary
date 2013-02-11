@@ -5,6 +5,7 @@
 package environment;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Point;
 
@@ -44,6 +45,23 @@ public class Grid implements Paintable {
     //   <editor-fold defaultstate="collapsed" desc="Paintable">
     @Override
     public void paintComponent(Graphics graphics) {
+//        graphics.setColor(color);
+//
+//        for (int row = 0; row < rows; row++) {
+//            for (int column = 0; column < columns; column++) {
+//                graphics.drawRect(position.x + (column * cellWidth),
+//                        position.y + (row * cellHeight),
+//                        cellWidth, cellHeight);
+//            }
+//        }
+        paint(graphics, position, columns, rows,  cellWidth, cellHeight, color);
+    }
+
+//  </editor-fold>
+ 
+    //   <editor-fold defaultstate="collapsed" desc="Methods">
+
+    public static void paint(Graphics graphics, Point position, int columns, int rows, int cellWidth, int cellHeight, Color color) {
         graphics.setColor(color);
 
         for (int row = 0; row < rows; row++) {
@@ -54,9 +72,7 @@ public class Grid implements Paintable {
             }
         }
     }
-//  </editor-fold>
- 
-    //   <editor-fold defaultstate="collapsed" desc="Methods">
+    
     /**
      * @return a Point(x, y) coordinate of the top left position of the cell
      * Note that this does not validate if the row and column input parameters
