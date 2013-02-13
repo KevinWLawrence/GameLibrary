@@ -61,6 +61,17 @@ public class Grid implements Paintable {
  
     //   <editor-fold defaultstate="collapsed" desc="Methods">
 
+    /**  By Kevin Lawrence
+     * @param graphics the Graphics surface upon which to draw
+     * @param position the system coordinate location of the top left corner of the grid
+     * @param columns the number of columns in the grid
+     * @param rows the number of rows in the grid
+     * @param cellWidth the width of each cell in the grid in pixels
+     * @param cellHeight the height of each cell in the grid in pixels
+     * @param color the color to draw the grid
+     * 
+     * Draws a grid based on input parameters.
+     */
     public static void paint(Graphics graphics, Point position, int columns, int rows, int cellWidth, int cellHeight, Color color) {
         graphics.setColor(color);
 

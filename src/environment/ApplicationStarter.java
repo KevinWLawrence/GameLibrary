@@ -12,7 +12,7 @@ import javax.swing.JFrame;
  * @author kevinlawrence
  */
 public class ApplicationStarter {
-    public static final Dimension DEFAULT_WINDOW_SIZE = new Dimension(800, 600);
+    public static final Dimension DEFAULT_WINDOW_SIZE = new Dimension(900, 600);
     
     public static void run(String[] args, String appName, Dimension appSize, Environment environment) {
         JFrame frame = new JFrame(appName);
